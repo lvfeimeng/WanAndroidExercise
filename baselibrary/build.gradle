@@ -44,4 +44,7 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies['glide-compiler']
     api rootProject.ext.dependencies['retrofit-cookie']
 
+    api rootProject.ext.dependencies['butterknife']
+    annotationProcessor rootProject.ext.dependencies['butterknife-compiler']
+
 }
