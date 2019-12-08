@@ -40,6 +40,14 @@ dependencies {
     api rootProject.ext.dependencies['okhttp']
     api rootProject.ext.dependencies['logging-interceptor']
     api rootProject.ext.dependencies['recycler-adapter-helper']
+    api rootProject.ext.dependencies['fastjson']
+
+    api rootProject.ext.dependencies['smart-refreshlayout']
+    api rootProject.ext.dependencies['smart-refreshlayout-header']
+    api rootProject.ext.dependencies['recyclerview-flexibledivider']
+    api rootProject.ext.dependencies['immersionbar']
+    api rootProject.ext.dependencies['immersionbar-components']
+
     api rootProject.ext.dependencies['glide']
     annotationProcessor rootProject.ext.dependencies['glide-compiler']
     api rootProject.ext.dependencies['retrofit-cookie']

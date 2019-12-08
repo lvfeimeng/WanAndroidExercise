@@ -5,6 +5,7 @@ import com.franmontiel.persistentcookiejar.PersistentCookieJar;
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
 import com.wan.library.base.BaseApplication;
+import com.wan.library.json.FastJsonConverterFactory;
 
 import java.util.concurrent.TimeUnit;
 
@@ -40,6 +41,7 @@ public class RetrofitClient {
                 .baseUrl(API_HOST)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())   // 使用 gson 解析器解析 json
+//                .addConverterFactory(FastJsonConverterFactory.create())   // 使用 fastjson 解析器解析 json
                 .client(okHttpClient)
                 .build();
 
