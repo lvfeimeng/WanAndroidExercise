@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="18sp"
+        tools:text="Title"
+        android:textColor="@color/black"
+        android:ellipsize="end"/>
+
+    <TextView
+        android:id="@+id/tv_author"
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        tools:text="author"
+        android:layout_marginTop="10dp"
+        android:textSize="14sp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:maxLength="15"
+        android:textColor="#80666666"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#80666666"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="@id/tv_author"
+        tools:text="2019-12-08"
+        app:layout_constraintStart_toEndOf="@id/tv_author"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,4 +1,6 @@
 package com.wan.exercise;
 
-public class MainApp {
+import com.wan.library.base.BaseApplication;
+
+public class MainApp extends BaseApplication {
 }

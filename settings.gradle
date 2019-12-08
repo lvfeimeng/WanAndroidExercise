@@ -1,2 +1,2 @@
-include ':app', ':baselibrary',':project'
+include ':app', ':baselibrary',':project',':system'
 rootProject.name='WanAndroidExercise'

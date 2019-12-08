@@ -16,6 +16,11 @@ android {
         if (isRunAlone.toBoolean()) {
             applicationId "com.wan.project"
         }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
     buildTypes {
         release {

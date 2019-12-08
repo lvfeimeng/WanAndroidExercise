@@ -6,11 +6,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
-import com.gyf.immersionbar.ImmersionBar;
 import com.wan.library.base.BaseMVPFragment;
 import com.wan.project.adapter.ProjectPageAdapter;
 import com.wan.project.bean.ProjectPageItem;
@@ -19,14 +16,12 @@ import com.wan.project.presenter.ProjectPresenter;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 
 /**
  * MainActivity第二个Fragment
  */
+
+//@Route(path = Constants.ROUTE_PROJECT)
 public class ProjectFragment extends BaseMVPFragment<ProjectPresenter> implements ProjectContract.View {
 
 
@@ -41,11 +36,6 @@ public class ProjectFragment extends BaseMVPFragment<ProjectPresenter> implement
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ImmersionBar.with(this)
-                .fitsSystemWindows(true)
-                .statusBarDarkFont(true)
-                .statusBarColor(android.R.color.white)
-                .init();
         tabLayout = view.findViewById(R.id.tab_layout);
         viewPager = view.findViewById(R.id.view_pager);
         presenter.getProjectTabs();

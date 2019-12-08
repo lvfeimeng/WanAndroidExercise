@@ -6,13 +6,13 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
+import com.wan.library.WebViewActivity;
 import com.wan.library.base.BaseMVPFragment;
 import com.wan.project.adapter.SubProjectAdapter;
 import com.wan.project.bean.ProjectResult;
@@ -23,8 +23,6 @@ import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.ButterKnife;
-
 
 /**
  * project的子页面
@@ -34,7 +32,7 @@ public class SubProjectFragment extends BaseMVPFragment<SubProjectPresenter> imp
     private List<ProjectResult.DatasBean> list;
     private SubProjectAdapter adapter;
 
-    public static final int FIRST_PAGE=1;
+    public static final int FIRST_PAGE = 1;
 
     private int page = FIRST_PAGE;
     private int id = 0;
@@ -80,7 +78,7 @@ public class SubProjectFragment extends BaseMVPFragment<SubProjectPresenter> imp
         if (getContext() == null) {
             return;
         }
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         recyclerView.addItemDecoration(
                 new HorizontalDividerItemDecoration.Builder(getContext())
                         .color(R.color.black)
@@ -92,6 +90,15 @@ public class SubProjectFragment extends BaseMVPFragment<SubProjectPresenter> imp
         adapter = new SubProjectAdapter(list);
         recyclerView.setAdapter(adapter);
         presenter.getProjects(id, page);
+
+        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                WebViewActivity.startActivity(getContext(),
+                        list.get(position).getTitle(),
+                        list.get(position).getLink());
+            }
+        });
     }
 
     @Override
